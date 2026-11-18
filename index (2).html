@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#172554">
+<title>LearnFlow Study</title>
+<style>
+:root{--bg:#f4f6fb;--panel:#fff;--ink:#172033;--muted:#687386;--line:#e5e9f2;--primary:#3559c7;--soft:#edf1ff;--green:#16845b;--amber:#a66a08;--red:#bd3b45;--shadow:0 8px 28px #1725540d}
+[data-theme=dark]{--bg:#101522;--panel:#192234;--ink:#edf2ff;--muted:#a5b0c4;--line:#2b3850;--primary:#8da7ff;--soft:#273454;--green:#5bd3a1;--amber:#f2c16d;--red:#ff8a92;--shadow:0 8px 28px #0003}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.6}button,input,textarea,select{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:9px 14px;background:var(--primary);color:white}button.secondary{background:var(--soft);color:var(--ink)}button.ghost{background:transparent;color:var(--muted);border:1px solid var(--line)}button.danger{background:#b93846}button.small{padding:6px 10px;font-size:13px}.app{display:grid;grid-template-columns:1fr;min-height:100vh}.sidebar{display:none}.brand{font-size:21px;font-weight:800;display:flex;gap:10px;align-items:center;margin:0 8px 25px}.brandmark{background:var(--primary);color:white;border-radius:12px;padding:5px 10px}.navlabel{color:var(--muted);font-size:12px;margin:18px 10px 7px}.nav button{display:flex;width:100%;text-align:right;gap:10px;align-items:center;background:transparent;color:var(--ink);margin:3px 0;padding:10px 12px}.nav button.active,.nav button:hover{background:var(--soft);color:var(--primary)}.sidebar-foot{margin-top:24px;border-top:1px solid var(--line);padding-top:14px;color:var(--muted);font-size:12px}.main{min-width:0;padding:22px clamp(14px,3vw,38px) 50px;max-width:1000px;width:100%;margin:auto}.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:24px}.topbar h1{font-size:25px;margin:0}.top-actions{display:flex;gap:8px;flex-wrap:wrap}.muted{color:var(--muted)}.smalltext{font-size:12px;color:var(--muted)}.grid{display:grid;gap:15px}.stats{grid-template-columns:repeat(4,minmax(0,1fr));margin:16px 0 22px}.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px;box-shadow:none;min-width:0}.stat{display:flex;align-items:center;gap:13px}.stat-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:var(--soft);font-size:20px}.stat strong{display:block;font-size:25px;line-height:1.2}.stat span{font-size:12px;color:var(--muted)}.two{grid-template-columns:1.2fr .8fr}.three{grid-template-columns:repeat(3,minmax(0,1fr))}.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:22px 0 12px}.section-head h2{font-size:18px;margin:0}.progress{height:9px;background:var(--line);border-radius:99px;overflow:hidden}.progress>i{display:block;height:100%;background:var(--primary);border-radius:99px}.subject-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.subject{border:1px solid var(--line);background:var(--panel);border-radius:14px;padding:14px;cursor:pointer;text-align:right;color:var(--ink)}.subject:hover{border-color:var(--primary);transform:translateY(-1px)}.subject-top{display:flex;justify-content:space-between;align-items:center;gap:8px}.subject h3{font-size:15px;margin:0}.pill{display:inline-flex;align-items:center;padding:3px 9px;border-radius:99px;background:var(--soft);color:var(--primary);font-size:11px;white-space:nowrap}.task{display:flex;justify-content:space-between;gap:10px;align-items:center;border-bottom:1px solid var(--line);padding:10px 0}.task:last-child{border:0}.task-title{font-weight:700;font-size:14px}.task-meta{font-size:12px;color:var(--muted)}.badge{font-size:11px;border-radius:8px;padding:4px 8px;background:var(--soft);color:var(--primary)}.badge.due{background:#fff2d9;color:#8a5b09}.badge.overdue{background:#ffe5e7;color:#a62935}.badge.done{background:#def7eb;color:#126b49}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin:12px 0}.field{display:flex;flex-direction:column;gap:5px;margin:10px 0}.field label{font-size:13px;color:var(--muted)}input,textarea,select{width:100%;padding:10px 11px;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--ink);outline:none}input:focus,textarea:focus,select:focus{border-color:var(--primary)}textarea{min-height:100px;resize:vertical}.lesson-row{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:10px 2px;border-bottom:1px solid var(--line)}.lesson-row:last-child{border:0}.lesson-row h3{font-size:14px;font-weight:600;margin:0}.lesson-actions{display:flex;gap:6px;flex-wrap:wrap}.doneBtn{background:#16845b;color:white}.empty{padding:28px;text-align:center;color:var(--muted)}.modal-back{position:fixed;inset:0;background:#07112699;display:none;align-items:center;justify-content:center;padding:16px;z-index:10}.modal-back.show{display:flex}.modal{background:var(--panel);border:1px solid var(--line);border-radius:18px;width:min(760px,100%);max-height:92vh;overflow:auto;padding:20px}.modal-head{display:flex;justify-content:space-between;align-items:center;gap:10px}.modal-head h2{margin:0;font-size:19px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.formgrid .wide{grid-column:1/-1}.resource{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px;border:1px solid var(--line);border-radius:10px;margin:7px 0}.resource a{color:var(--primary)}.toast{position:fixed;bottom:18px;left:18px;background:var(--ink);color:var(--panel);padding:11px 16px;border-radius:11px;z-index:20;display:none;max-width:90vw}.toast.show{display:block}.hidden{display:none!important}.barrow{display:grid;grid-template-columns:120px 1fr 40px;gap:10px;align-items:center;margin:10px 0;font-size:13px}.calendar-day{border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center}.calendar-day strong{display:block;font-size:19px}.notice{border:1px solid #e7c987;background:#fff8e8;color:#76500b;border-radius:12px;padding:12px;font-size:13px;margin:12px 0}[data-theme=dark] .notice{background:#3b3020;color:#f4d99d;border-color:#6a542b}.mobile-menu{display:none}
+@media(max-width:900px){.app{grid-template-columns:1fr}.sidebar{position:fixed;z-index:9;right:-280px;width:260px;transition:.2s;box-shadow:var(--shadow)}.sidebar.open{right:0}.mobile-menu{display:inline-block}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.two,.three{grid-template-columns:1fr}.main{padding-top:16px}}
+@media(max-width:560px){.subject-list{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.formgrid .wide{grid-column:auto}.topbar h1{font-size:20px}.lesson-row{grid-template-columns:1fr}.lesson-actions{justify-content:flex-start}.stats{gap:9px}.card{padding:13px}}
+
+/* LearnFlow layout */
+.app{display:grid;grid-template-columns:270px minmax(0,1fr);min-height:100vh}
+.learn-sidebar{background:linear-gradient(180deg,#101b3c,#14285b 65%,#123b78);color:#eef4ff;padding:20px 15px;min-height:100vh;position:sticky;top:0;height:100vh;overflow:auto}
+.brand{font-size:19px;font-weight:800;display:flex;gap:10px;align-items:center;margin:0 5px 25px;color:#fff}.brandmark{background:#2e83ff;color:white;border-radius:10px;padding:5px 10px}
+.side-summary{background:#ffffff10;border:1px solid #ffffff20;border-radius:13px;padding:13px;margin-bottom:22px}.side-label{font-size:12px;color:#a9c4f7;margin:0 7px 10px;font-weight:700}
+.side-metric{display:inline-flex;flex-direction:column;width:48%;margin:5px 0 10px}.side-metric strong{font-size:23px;color:white;line-height:1.2}.side-metric span,.side-small{font-size:11px;color:#bfd0ef}
+.side-progress{height:6px;border-radius:20px;background:#ffffff25;overflow:hidden;margin:3px 0 7px}.side-progress i{display:block;height:100%;width:0;background:#42e0c2;border-radius:20px}
+.paths-label{margin-top:12px}.path-list{display:grid;gap:8px}.path-item{background:transparent;border:1px solid transparent;color:#e8f0ff;text-align:right;padding:11px;border-radius:11px;width:100%}.path-item:hover,.path-item.active{background:#ffffff12;border-color:#ffffff22}.path-item strong{display:block;font-size:13px}.path-item small{display:block;color:#b7c9ed;font-size:11px;margin:2px 0 7px}.path-item .path-bar{height:5px;background:#ffffff24;border-radius:10px;overflow:hidden}.path-item .path-bar i{display:block;height:100%;background:#46dec2}
+.side-bottom{border-top:1px solid #ffffff22;margin-top:18px;padding-top:12px;display:grid;gap:4px}.side-nav{background:transparent;color:#d9e6ff;text-align:right;padding:9px 10px;border-radius:9px;width:100%}.side-nav.active,.side-nav:hover{background:#ffffff17;color:#fff}
+.main{min-width:0;padding:24px clamp(14px,3vw,34px) 55px;max-width:1500px;width:100%;margin:auto}.topbar h1{font-size:24px;margin:2px 0}.eyebrow{font-size:10px;letter-spacing:1.3px;color:var(--muted);font-weight:700}
+.flow-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:4px 0 14px}.flow-head h2{font-size:18px;margin:0}.flow-subtitle{font-size:12px;color:var(--muted)}
+.flow-canvas{position:relative;min-height:250px;border:1px solid var(--line);border-radius:16px;padding:25px 18px;background-color:var(--panel);background-image:radial-gradient(var(--line) 1px,transparent 1px);background-size:19px 19px;overflow:hidden}
+.flow-nodes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;align-items:start}.flow-node{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:13px;box-shadow:0 5px 18px #0d1b3b0a;min-width:0}.flow-node.is-done{border-color:#28b99c}.flow-node.is-written{box-shadow:inset 0 0 0 1px #5686e8}
+.node-top{display:flex;align-items:flex-start;gap:8px}.node-number{width:25px;height:25px;border-radius:8px;background:var(--soft);color:var(--primary);display:grid;place-items:center;font-size:12px;font-weight:700;flex:none}.node-title{font-weight:700;font-size:13px;line-height:1.5;flex:1}.node-status{font-size:10px;color:var(--muted);margin:6px 0 10px 33px}.node-actions{display:flex;gap:6px;flex-wrap:wrap}.node-actions button{font-size:11px;padding:6px 9px}.node-actions .doneBtn{background:#138b69;color:#fff}.flow-legend{display:flex;gap:15px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-top:12px}.legend-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-left:5px;background:#a5afc2}.legend-dot.green{background:#28b99c}.legend-dot.blue{background:#5686e8}
+.dashboard-hero{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-bottom:15px}.hero-card{background:linear-gradient(120deg,#132d68,#2468b8);color:white;border-radius:16px;padding:20px;min-height:150px}.hero-card h2{font-size:20px;margin:0 0 6px}.hero-card p{font-size:12px;color:#d5e4ff;margin:0 0 16px}.hero-progress{height:8px;background:#ffffff35;border-radius:20px;overflow:hidden}.hero-progress i{display:block;height:100%;background:#4be0c2}.hero-number{font-size:28px;font-weight:800}.hero-side{display:grid;grid-template-columns:1fr 1fr;gap:10px}.hero-stat{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:14px}.hero-stat strong{font-size:23px;display:block}.hero-stat span{font-size:11px;color:var(--muted)}.dashboard-columns{display:grid;grid-template-columns:1fr 1fr;gap:14px}.compact-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:15px}.compact-card h3{font-size:15px;margin:0 0 10px}.mini-path{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:12px}.mini-path:last-child{border:0}.mini-path button{font-size:11px;padding:5px 9px}
+@media(max-width:900px){.app{grid-template-columns:1fr}.learn-sidebar{position:relative;height:auto;min-height:0;padding:14px}.brand{margin-bottom:12px}.side-summary{display:none}.path-list{display:flex;overflow:auto}.path-item{min-width:155px}.side-bottom{display:flex;flex-wrap:wrap;margin-top:10px}.side-nav{width:auto;font-size:12px}.dashboard-hero{grid-template-columns:1fr}}
+@media(max-width:600px){.main{padding-top:15px}.topbar h1{font-size:20px}.dashboard-columns{grid-template-columns:1fr}.flow-canvas{padding:13px}.flow-nodes{grid-template-columns:1fr;gap:12px}.hero-side{grid-template-columns:1fr 1fr}}
+
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="learn-sidebar">
+  <div class="brand"><span class="brandmark">LF</span><span>LearnFlow Study</span></div>
+  <div class="side-summary">
+    <div class="side-label">ملخص التقدم</div>
+    <div class="side-metric"><strong id="sideDone">0</strong><span>دروس تمت مذاكرتها</span></div>
+    <div class="side-metric"><strong id="sidePercent">0%</strong><span>التقدم العام</span></div>
+    <div class="side-progress"><i id="sideProgress"></i></div>
+    <div class="side-small" id="sideRemaining">متبقي 0 درس</div>
+  </div>
+  <div class="side-label paths-label">مسارات التعلم</div>
+  <div id="pathList" class="path-list"></div>
+  <nav class="side-bottom">
+    <button class="side-nav" data-page="dashboard">⌂ <span>لوحة المتابعة</span></button>
+    <button class="side-nav" data-page="subjects">▦ <span>مسارات التعلم</span></button>
+    <button class="side-nav" data-page="analytics">▥ <span>الإحصائيات</span></button>
+    <button class="side-nav" data-page="revisions">↻ <span>المراجعات</span></button>
+    <button class="side-nav" data-page="settings">⚙ <span>الإعدادات والنسخ الاحتياطي</span></button>
+  </nav>
+</aside>
+<main class="main">
+  <header class="topbar">
+    <div><div class="eyebrow">PERSONAL LEARNING WORKSPACE</div><h1 id="pageTitle">لوحة المتابعة</h1><div class="smalltext" id="todayLabel"></div></div>
+    <div class="top-actions"><button class="secondary" id="revisionShortcut">المراجعات</button></div>
+  </header>
+  <section id="view"></section>
+</main>
+</div>
+<div class="modal-back" id="modalBack"><div class="modal" id="modal"></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const seed = [
+ {name:"الرياضيات",icon:"∑",lessons:["Gamma Function","Beta Function","Laplace Transform","Inverse Laplace Transform","ODE","Complex Analysis"]},
+ {name:"الدوائر الكهربائية",icon:"⌁",lessons:["Capacitors and Inductors","Natural Response RL, RC","Step Response RL, RC","Natural Response RLC","Step Response RLC"]},
+ {name:"الآلات الكهربائية",icon:"ϟ",lessons:["Exact Primary and Secondary Parameters","Approximate Primary and Secondary Parameters","Maximum Efficiency","Open Circuit Test","Short Circuit Test"]},
+ {name:"المنطق الرقمي (Logic)",icon:"▤",lessons:["Number Systems","SOP and POS","K-Map","De Morgan's Theorem","Logic Gates","Simplification","Boolean Algebra"]},
+ {name:"القياسات (Measurements)",icon:"◉",lessons:["Diode, FET, BJT","Emitter Follower / Source Follower","Common Emitter and Coupled Amplifiers","Electronic Ohmmeter","Thermocouple","Function Generator","Hartley Oscillator","Wien Bridge Oscillator"]},
+ {name:"الإلكترونيات",icon:"⌬",lessons:["Diode","Ideal and Non-Ideal Diode","Zener Diode","Semiconductor","Half-Wave Rectifier","Full-Wave Rectifier","Center-Tapped Transformer","Bridge Rectifier"]},
+ {name:"ميكانيكا الموائع (Fluid)",icon:"≈",lessons:["Units","Viscosity","Surface Tension","Pressure","Hydrostatic Pressure","Forces Acting on Submerged Bodies"]},
+ {name:"موضوعات إضافية",icon:"＋",lessons:[]}
+];
+const KEY="myStudyHub.v1";
+let db={subjects:[],lessons:{},settings:{theme:"light",reminderTime:"19:00",notifications:false,intervals:[1,3,7,14,30]},createdAt:new Date().toISOString()};
+let currentPage="dashboard", currentSubject=null, currentLesson=null, dbReady=false;
+const $=s=>document.querySelector(s);
+const today=()=>{let d=new Date();d.setHours(0,0,0,0);return d};
+const iso=d=>{let x=new Date(d);return x.toISOString().slice(0,10)};
+const dateLabel=d=>d?new Date(d+"T12:00:00").toLocaleDateString("ar-EG",{year:"numeric",month:"short",day:"numeric"}):"—";
+const escapeHTML=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+function save(){localStorage.setItem(KEY,JSON.stringify(db))}
+function toast(s){let t=$("#toast");t.textContent=s;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2600)}
+function makeId(){return "l"+Date.now().toString(36)+Math.random().toString(36).slice(2,7)}
+function init(){
+ let raw=localStorage.getItem(KEY);
+ if(raw){try{db={...db,...JSON.parse(raw)}}catch(e){}}
+ if(!db.subjects?.length){
+   db.subjects=seed.map((s,i)=>({id:"s"+i,name:s.name,icon:s.icon}));
+   seed.forEach((s,i)=>s.lessons.forEach(name=>{let id=makeId();db.lessons[id]={id,subjectId:"s"+i,title:name,status:"not_started",video:"",notes:"",equations:"",questions:"",practice:"",files:[],createdAt:null,studiedAt:null,lastRevision:null,nextRevision:null,revisionCount:0,history:[],rating:0,studyDone:false,writingDone:false}}));
+ }
+ // migrate missing subject ids / fields
+ db.subjects ||= []; db.lessons ||= {}; db.settings={...{theme:"light",reminderTime:"19:00",notifications:false,intervals:[1,3,7,14,30]},...db.settings};
+ Object.values(db.lessons).forEach(l=>{l.files||=[];l.history||=[];l.status||="not_started";l.revisionCount||=0;l.studyDone=!!l.studyDone||["studied","mastered"].includes(l.status);l.writingDone=!!l.writingDone});
+ save(); applyTheme(); $("#todayLabel").textContent=new Date().toLocaleDateString("ar-EG",{weekday:"long",year:"numeric",month:"long",day:"numeric"});
+ render(); checkDueNotice();
+}
+function lessons(){return Object.values(db.lessons)}
+function subjectLessons(id){return lessons().filter(l=>l.subjectId===id)}
+function completed(l){return ["studied","mastered"].includes(l.status)}
+function dueLessons(){let t=iso(today());return lessons().filter(l=>l.nextRevision && l.nextRevision<=t && l.status!=="not_started")}
+function pct(arr){return arr.length?Math.round(arr.filter(completed).length/arr.length*100):0}
+function statusName(s){return ({not_started:"لم يبدأ",studying:"قيد المذاكرة",studied:"تمت المذاكرة",practice:"يحتاج تدريب",revision:"يحتاج مراجعة",mastered:"متقن"})[s]||s}
+function statusBadge(s){return `<span class="badge ${s==="mastered"?"done":s==="revision"?"due":""}">${statusName(s)}</span>`}
+function setPage(p){currentPage=p;render()}
+$("#revisionShortcut").onclick=()=>setPage("revisions");
+function applyTheme(){document.documentElement.dataset.theme=db.settings.theme||"light"}
+function render(){
+ const titles={dashboard:"لوحة المتابعة",subjects:"مسارات التعلم",revisions:"المراجعات",analytics:"الإحصائيات",settings:"الإعدادات والنسخ الاحتياطي"};
+ $("#pageTitle").textContent=titles[currentPage]||"LearnFlow Study";
+ const v=$("#view");
+ if(currentPage==="dashboard")v.innerHTML=dashboardHTML();
+ if(currentPage==="subjects")v.innerHTML=subjectsHTML();
+ if(currentPage==="revisions")v.innerHTML=revisionsHTML();
+ if(currentPage==="analytics")v.innerHTML=analyticsHTML();
+ if(currentPage==="settings")v.innerHTML=settingsHTML();
+ bindView();updateLearnFlowSidebar();
+}
+function updateLearnFlowSidebar(){
+ let all=lessons(),done=all.filter(l=>l.studyDone||completed(l)).length,percent=all.length?Math.round(done/all.length*100):0;
+ $("#sideDone").textContent=done;$("#sidePercent").textContent=percent+"%";$("#sideRemaining").textContent="متبقي "+(all.length-done)+" درس";$("#sideProgress").style.width=percent+"%";
+ $("#pathList").innerHTML=db.subjects.map(sub=>{let a=subjectLessons(sub.id),d=a.filter(l=>l.studyDone||completed(l)).length,p=a.length?Math.round(d/a.length*100):0;return `<button class="path-item ${currentPage==="subjects"&&currentSubject===sub.id?"active":""}" data-path="${sub.id}"><strong>${escapeHTML(sub.name)}</strong><small>${d} من ${a.length} درس · ${p}%</small><div class="path-bar"><i style="width:${p}%"></i></div></button>`}).join("");
+ document.querySelectorAll("[data-path]").forEach(b=>b.onclick=()=>{currentSubject=b.dataset.path;setPage("subjects")});
+ document.querySelectorAll(".side-nav").forEach(b=>{b.classList.toggle("active",b.dataset.page===currentPage);b.onclick=()=>setPage(b.dataset.page)});
+}
+function dashboardHTML(){
+ let all=lessons(),done=all.filter(l=>l.studyDone||completed(l)).length,written=all.filter(l=>l.writingDone).length,due=dueLessons(),over=due.filter(l=>l.nextRevision<iso(today())).length;
+ let upcoming=all.filter(l=>l.nextRevision&&l.nextRevision>iso(today())).sort((a,b)=>a.nextRevision.localeCompare(b.nextRevision)).slice(0,4),p=all.length?Math.round(done/all.length*100):0;
+ let paths=db.subjects.map(sub=>{let a=subjectLessons(sub.id),d=a.filter(l=>l.studyDone||completed(l)).length,w=a.filter(l=>l.writingDone).length;return `<div class="mini-path"><div><strong>${escapeHTML(sub.name)}</strong><div class="smalltext">${d}/${a.length} مذاكرة · ${w}/${a.length} كتابة</div></div><button class="secondary" data-path-open="${sub.id}">فتح المسار</button></div>`}).join("");
+ return `<div class="dashboard-hero"><div class="hero-card"><div class="hero-number">${p}%</div><h2>تقدمك في رحلة التعلم</h2><p>تابع دروسك خطوة بخطوة، وأنهِ المذاكرة والكتابة لكل درس.</p><div class="hero-progress"><i style="width:${p}%"></i></div><div class="smalltext" style="color:#dce9ff;margin-top:8px">${done} من ${all.length} درس تمت مذاكرته</div></div><div class="hero-side"><div class="hero-stat"><strong>${all.length}</strong><span>إجمالي الدروس</span></div><div class="hero-stat"><strong>${written}</strong><span>تمت كتابتها</span></div><div class="hero-stat"><strong>${due.length}</strong><span>مراجعات مستحقة</span></div><div class="hero-stat"><strong>${over}</strong><span>مراجعات متأخرة</span></div></div></div>
+ <div class="dashboard-columns"><div class="compact-card"><h3>مسارات التعلم</h3>${paths||"<div class='empty'>لا توجد مواد بعد.</div>"}</div><div class="compact-card"><h3>المراجعات المطلوبة</h3>${due.length?due.slice(0,4).map(l=>taskHTML(l,true)).join(""):`<div class="empty">لا توجد مراجعات مستحقة الآن.</div>`}<h3 style="margin-top:15px">المراجعات القادمة</h3>${upcoming.length?upcoming.map(l=>taskHTML(l,false)).join(""):`<div class="smalltext">لا توجد مواعيد قادمة.</div>`}</div></div>`;
+}
+function taskHTML(l,isDue){let s=db.subjects.find(x=>x.id===l.subjectId);let late=l.nextRevision<iso(today());return `<div class="task"><div><div class="task-title">${escapeHTML(l.title)}</div><div class="task-meta">${escapeHTML(s?.name||"")} · ${dateLabel(l.nextRevision)}</div></div><div style="display:flex;gap:6px;align-items:center">${isDue?`<span class="badge ${late?"overdue":"due"}">${late?"متأخرة":"مستحقة"}</span>`:""}<button class="small secondary" data-open="${l.id}">${isDue?"راجع الآن":"التفاصيل"}</button></div></div>`}
+function subjectsHTML(){
+ if(!currentSubject||!db.subjects.some(x=>x.id===currentSubject))currentSubject=db.subjects[0]?.id||null;
+ let sub=db.subjects.find(x=>x.id===currentSubject);if(!sub)return `<div class="empty">لا توجد مسارات تعلم.</div>`;
+ let a=subjectLessons(sub.id),done=a.filter(l=>l.studyDone||completed(l)).length,written=a.filter(l=>l.writingDone).length,p=a.length?Math.round(done/a.length*100):0;
+ return `<div class="flow-head"><div><h2>${escapeHTML(sub.name)}</h2><div class="flow-subtitle">${a.length} درس · ${done} مكتمل مذاكرة · ${written} مكتمل كتابة</div></div><span class="pill">${p}% إنجاز</span></div><div class="flow-canvas">${a.length?`<div class="flow-nodes">${a.map((l,i)=>flowNode(l,i)).join("")}</div>`:`<div class="empty">لا توجد دروس في هذا المسار.</div>`}</div><div class="flow-legend"><span><i class="legend-dot green"></i>تمت المذاكرة</span><span><i class="legend-dot blue"></i>تمت الكتابة</span><span><i class="legend-dot"></i>لم يكتمل بعد</span></div>`;
+}
+function flowNode(l,i){return `<div class="flow-node ${l.studyDone||completed(l)?"is-done":""} ${l.writingDone?"is-written":""}"><div class="node-top"><span class="node-number">${i+1}</span><div class="node-title">${escapeHTML(l.title)}</div></div><div class="node-status">${l.studyDone||completed(l)?"✓ تمت المذاكرة":"بانتظار المذاكرة"} · ${l.writingDone?"✓ تمت الكتابة":"الكتابة لم تكتمل"}</div><div class="node-actions"><button class="small ${l.studyDone||completed(l)?"doneBtn":"secondary"}" data-study="${l.id}">${l.studyDone||completed(l)?"✓ تمت":"إتمام"}</button><button class="small ${l.writingDone?"doneBtn":"secondary"}" data-writing="${l.id}">${l.writingDone?"✓ تمت الكتابة":"إتمام الكتابة"}</button></div></div>`}
+function revisionsHTML(){
+ let due=dueLessons().sort((a,b)=>a.nextRevision.localeCompare(b.nextRevision)),future=lessons().filter(l=>l.nextRevision>iso(today())).sort((a,b)=>a.nextRevision.localeCompare(b.nextRevision));
+ return `<div class="notice">نظام المراجعة الافتراضي: بعد يوم، 3 أيام، 7 أيام، 14 يومًا، ثم 30 يومًا. عند كل مراجعة قيّم تذكّرك ليحدد الموقع الموعد التالي.</div><div class="grid two"><div class="card"><div class="section-head" style="margin-top:0"><h2>مطلوب مراجعتها الآن</h2><span class="pill">${due.length}</span></div>${due.length?due.map(l=>taskHTML(l,true)).join(""):`<div class="empty">أحسنت! لا توجد مراجعات مستحقة حاليًا.</div>`}</div><div class="card"><div class="section-head" style="margin-top:0"><h2>المراجعات القادمة</h2><span class="pill">${future.length}</span></div>${future.length?future.map(l=>taskHTML(l,false)).join(""):`<div class="empty">بعد ما تدرس دروسك، هتظهر المواعيد هنا.</div>`}</div></div>`;
+}
+function analyticsHTML(){
+ let all=lessons(),hist=all.flatMap(l=>l.history||[]),last7=Array.from({length:7},(_,i)=>{let d=today();d.setDate(d.getDate()-(6-i));let key=iso(d);return {key,label:d.toLocaleDateString("ar-EG",{weekday:"short"}),n:hist.filter(h=>h.date===key).length}});
+ let max=Math.max(1,...last7.map(x=>x.n));
+ let weak=all.filter(l=>l.history?.some(h=>h.rating<=2)).sort((a,b)=>(b.history?.filter(h=>h.rating<=2).length||0)-(a.history?.filter(h=>h.rating<=2).length||0)).slice(0,5);
+ let streak=0;for(let i=0;i<365;i++){let d=today();d.setDate(d.getDate()-i);if(hist.some(h=>h.date===iso(d)))streak++;else if(i>0)break}
+ return `<div class="grid stats"><div class="card stat"><div class="stat-icon">✓</div><div><strong>${pct(all)}%</strong><span>نسبة الإنجاز</span></div></div><div class="card stat"><div class="stat-icon">↻</div><div><strong>${hist.length}</strong><span>مرات المراجعة المسجلة</span></div></div><div class="card stat"><div class="stat-icon">🔥</div><div><strong>${streak}</strong><span>أيام نشاط متتالية</span></div></div><div class="card stat"><div class="stat-icon">★</div><div><strong>${all.filter(l=>l.status==="mastered").length}</strong><span>دروس متقنة</span></div></div></div>
+ <div class="grid two"><div class="card"><h2 style="font-size:17px">نشاط آخر 7 أيام</h2>${last7.map(x=>`<div class="barrow"><span>${x.label}</span><div class="progress"><i style="width:${x.n/max*100}%"></i></div><b>${x.n}</b></div>`).join("")}<p class="smalltext">يُحسب النشاط من جلسات المراجعة التي تسجلها داخل الموقع.</p></div><div class="card"><h2 style="font-size:17px">التقدم حسب المادة</h2>${db.subjects.map(s=>{let a=subjectLessons(s.id);return `<div class="barrow"><span>${escapeHTML(s.name)}</span><div class="progress"><i style="width:${pct(a)}%"></i></div><b>${pct(a)}%</b></div>`}).join("")}</div></div>
+ <div class="card" style="margin-top:15px"><h2 style="font-size:17px">دروس تحتاج اهتمامًا أكبر</h2>${weak.length?weak.map(l=>`<div class="task"><span>${escapeHTML(l.title)}</span><button class="small secondary" data-open="${l.id}">افتح الدرس</button></div>`).join(""):`<div class="empty">لسه مفيش بيانات كافية. سجّل تقييمك بعد كل مراجعة.</div>`}</div>`;
+}
+function settingsHTML(){return `<div class="grid two"><div class="card"><h2 style="font-size:17px">التذكيرات</h2><div class="field"><label>ميعاد التذكير اليومي</label><input type="time" id="reminderTime" value="${db.settings.reminderTime||"19:00"}"></div><div class="field"><label><input type="checkbox" id="notifyToggle" style="width:auto" ${db.settings.notifications?"checked":""}> تفعيل إشعارات المتصفح</label></div><button id="saveSettings">حفظ الإعدادات</button><p class="smalltext">الإشعارات المحلية تعمل أثناء فتح الموقع. الإشعارات المضمونة بعد إغلاق المتصفح تحتاج خدمة Push وخادمًا خارجيًا؛ هذا الإصدار لا يدّعي توفيرها.</p><button class="secondary" id="testNotify">تجربة إشعار</button></div>
+ <div class="card"><h2 style="font-size:17px">فواصل المراجعة</h2><p class="smalltext">عدد الأيام بعد كل مراجعة ناجحة. افصل الأرقام بفواصل.</p><div class="field"><label>الفواصل بالأيام</label><input id="intervals" value="${db.settings.intervals.join(",")}"></div><button id="saveIntervals">حفظ الفواصل</button><hr style="border:0;border-top:1px solid var(--line);margin:20px 0"><h2 style="font-size:17px">النسخ الاحتياطي</h2><div class="toolbar"><button id="exportData">تصدير نسخة JSON</button><button class="secondary" id="importBtn">استيراد نسخة</button><input type="file" id="importFile" accept=".json,application/json" class="hidden"></div><button class="secondary" id="exportICS">تصدير المراجعات إلى التقويم (.ics)</button><p class="smalltext">ملفات PDF والفيديوهات المرفوعة تُخزّن في قاعدة بيانات المتصفح. النسخة الاحتياطية JSON تشمل بيانات الدروس والإعدادات، أما ملفات PDF فتحتاج تصديرًا منفصلًا من المتصفح أو الاحتفاظ بها في مكان آمن.</p></div></div>
+ <div class="card" style="margin-top:15px"><h2 style="font-size:17px">عن الموقع</h2><p>My Study Hub — مدير مذاكرة شخصي. لا يحتاج إلى حساب أو خادم. البيانات محفوظة على نفس المتصفح والجهاز.</p><button class="danger small" id="resetData">إعادة ضبط الموقع بالكامل</button></div>`}
+function bindView(){
+ document.querySelectorAll("[data-study]").forEach(b=>b.onclick=()=>{let l=db.lessons[b.dataset.study];l.studyDone=!l.studyDone;l.status=l.studyDone?"studied":"not_started";if(l.studyDone&&!l.studiedAt){l.studiedAt=iso(today());scheduleFirst(l)}if(!l.studyDone){l.nextRevision=null;l.studiedAt=null}save();render()});
+ document.querySelectorAll("[data-writing]").forEach(b=>b.onclick=()=>{let l=db.lessons[b.dataset.writing];l.writingDone=!l.writingDone;save();render()});
+ document.querySelectorAll("[data-goto]").forEach(b=>b.onclick=()=>setPage(b.dataset.goto));
+ document.querySelectorAll("[data-path-open]").forEach(b=>b.onclick=()=>{currentSubject=b.dataset.pathOpen;setPage("subjects")});
+ document.querySelectorAll("[data-subject]").forEach(b=>b.onclick=()=>{currentSubject=b.dataset.subject;setPage("subjects");setTimeout(()=>document.querySelector(`[data-subject-block="${currentSubject}"]`)?.scrollIntoView({behavior:"smooth"}),50)});
+ document.querySelectorAll("[data-open]").forEach(b=>b.onclick=()=>openLesson(b.dataset.open));
+
+ if($("#searchLessons")){let apply=()=>{let q=$("#searchLessons").value.toLowerCase(),st=$("#statusFilter").value;document.querySelectorAll("[data-lesson-row]").forEach(row=>{let l=db.lessons[row.dataset.lessonRow];let s=db.subjects.find(x=>x.id===l.subjectId);row.classList.toggle("hidden",!(l.title+" "+(s?.name||"")).toLowerCase().includes(q)&&false);let ok=(l.title+" "+(s?.name||"")).toLowerCase().includes(q)&&(!st||l.status===st);row.classList.toggle("hidden",!ok)})};$("#searchLessons").oninput=apply;$("#statusFilter").onchange=apply}
+ if($("#saveSettings"))$("#saveSettings").onclick=async()=>{db.settings.reminderTime=$("#reminderTime").value;let want=$("#notifyToggle").checked;if(want&&"Notification"in window){let p=await Notification.requestPermission();db.settings.notifications=p==="granted"}else db.settings.notifications=false;save();toast("تم حفظ الإعدادات")};
+ if($("#testNotify"))$("#testNotify").onclick=()=>notify("My Study Hub","ده إشعار تجريبي من موقع المذاكرة");
+ if($("#saveIntervals"))$("#saveIntervals").onclick=()=>{let a=$("#intervals").value.split(",").map(x=>parseInt(x.trim(),10));if(!a.length||a.some(x=>!Number.isFinite(x)||x<1)){toast("اكتب أرقام أيام صحيحة");return}db.settings.intervals=a;save();toast("تم حفظ فواصل المراجعة")};
+ if($("#exportData"))$("#exportData").onclick=exportJSON;
+ if($("#importBtn"))$("#importBtn").onclick=()=>$("#importFile").click();
+ if($("#importFile"))$("#importFile").onchange=importJSON;
+ if($("#exportICS"))$("#exportICS").onclick=exportICS;
+ if($("#resetData"))$("#resetData").onclick=()=>{if(confirm("هل أنت متأكد؟ سيتم حذف كل بيانات الموقع من هذا المتصفح.")){localStorage.removeItem(KEY);indexedDB.deleteDatabase("MyStudyHubFiles");location.reload()}};
+}
+function openModal(content){$("#modal").innerHTML=content;$("#modalBack").classList.add("show")}
+function closeModal(){$("#modalBack").classList.remove("show")}
+$("#modalBack").addEventListener("click",e=>{if(e.target===$("#modalBack"))closeModal()});
+function openSubjectForm(id){let s=id?db.subjects.find(x=>x.id===id):null;openModal(`<div class="modal-head"><h2>${s?"تعديل المادة":"إضافة مادة جديدة"}</h2><button class="ghost small" id="closeModal">✕</button></div><div class="field"><label>اسم المادة</label><input id="subName" value="${escapeHTML(s?.name||"")}"></div><div class="field"><label>رمز أو أيقونة</label><input id="subIcon" value="${escapeHTML(s?.icon||"▦")}"></div><div class="toolbar"><button id="saveSub">حفظ</button>${s?`<button class="danger" id="deleteSub">حذف المادة</button>`:""}</div>`);$("#closeModal").onclick=closeModal;$("#saveSub").onclick=()=>{let name=$("#subName").value.trim();if(!name)return toast("اكتب اسم المادة");if(s){s.name=name;s.icon=$("#subIcon").value}else db.subjects.push({id:makeId(),name,icon:$("#subIcon").value});save();closeModal();render()};if(s)$("#deleteSub").onclick=()=>{if(subjectLessons(s.id).length){toast("انقل أو احذف دروس المادة أولًا");return}if(confirm("حذف المادة؟")){db.subjects=db.subjects.filter(x=>x.id!==s.id);save();closeModal();render()}}}
+function openLessonForm(id=null,subjectId=null){
+ let l=id?db.lessons[id]:null;let opts=db.subjects.map(s=>`<option value="${s.id}" ${(l?.subjectId||subjectId)===s.id?"selected":""}>${escapeHTML(s.name)}</option>`).join("");
+ openModal(`<div class="modal-head"><h2>${l?"تعديل بيانات الدرس":"إضافة درس"}</h2><button class="ghost small" id="closeModal">✕</button></div>
+ <div class="formgrid"><div class="field wide"><label>اسم الدرس</label><input id="lessonTitle" value="${escapeHTML(l?.title||"")}" placeholder="اسم المحاضرة أو الموضوع"></div>
+ <div class="field"><label>المادة</label><select id="lessonSubject">${opts}</select></div><div class="field"><label>الحالة</label><select id="lessonStatus">${["not_started","studying","studied","practice","revision","mastered"].map(s=>`<option value="${s}" ${(l?.status||"not_started")===s?"selected":""}>${statusName(s)}</option>`).join("")}</select></div>
+ <div class="field wide"><label>رابط الفيديو (YouTube أو أي رابط)</label><input id="lessonVideo" value="${escapeHTML(l?.video||"")}" placeholder="https://..."></div>
+ <div class="field wide"><label>ملاحظاتي</label><textarea id="lessonNotes">${escapeHTML(l?.notes||"")}</textarea></div>
+ <div class="field wide"><label>القوانين والمعادلات</label><textarea id="lessonEquations">${escapeHTML(l?.equations||"")}</textarea></div>
+ <div class="field wide"><label>أسئلة مهمة</label><textarea id="lessonQuestions">${escapeHTML(l?.questions||"")}</textarea></div>
+ <div class="field wide"><label>مسائل وتدريبات</label><textarea id="lessonPractice">${escapeHTML(l?.practice||"")}</textarea></div>
+ </div><div class="toolbar"><button id="saveLesson">حفظ الدرس</button>${l?`<button class="danger" id="deleteLesson">حذف الدرس</button>`:""}</div>`);
+ $("#closeModal").onclick=closeModal;
+ $("#saveLesson").onclick=()=>{let title=$("#lessonTitle").value.trim();if(!title)return toast("اكتب اسم الدرس");let target=l||{id:makeId(),files:[],history:[],revisionCount:0,rating:0};Object.assign(target,{title,subjectId:$("#lessonSubject").value,status:$("#lessonStatus").value,video:$("#lessonVideo").value.trim(),notes:$("#lessonNotes").value,equations:$("#lessonEquations").value,questions:$("#lessonQuestions").value,practice:$("#lessonPractice").value});if(!l)db.lessons[target.id]=target;if(target.status==="studied"&&!target.studiedAt){target.studiedAt=iso(today());scheduleFirst(target)}if(target.status==="not_started")target.nextRevision=null;save();closeModal();render();toast("تم حفظ الدرس")};
+ if(l)$("#deleteLesson").onclick=()=>{if(confirm("حذف الدرس وكل بياناته؟")){delete db.lessons[l.id];save();closeModal();render()}};
+}
+function openLesson(id){
+ let l=db.lessons[id];if(!l)return;currentLesson=id;let s=db.subjects.find(x=>x.id===l.subjectId);
+ openModal(`<div class="modal-head"><div><div class="smalltext">${escapeHTML(s?.name||"")}</div><h2>${escapeHTML(l.title)}</h2></div><button class="ghost small" id="closeModal">✕</button></div>
+ <div class="toolbar">${statusBadge(l.status)} <span class="pill">المراجعة القادمة: ${dateLabel(l.nextRevision)}</span><button class="secondary small" id="editThis">تعديل</button></div>
+ <div class="grid two"><div><h3 style="font-size:15px">المذاكرة والموارد</h3>${l.video?`<div class="resource"><a href="${escapeHTML(l.video)}" target="_blank" rel="noopener">▶ فتح الفيديو</a></div>`:"<p class='smalltext'>لم تتم إضافة فيديو بعد.</p>"}<div class="field"><label>إضافة ملفات PDF أو مرفقات</label><input type="file" id="fileInput" multiple accept=".pdf,image/*,.doc,.docx,.ppt,.pptx,.txt"></div><div id="fileList">${(l.files||[]).map(f=>`<div class="resource"><span>📎 ${escapeHTML(f.name)}</span><div style="display:flex;gap:6px"><button class="small secondary" data-file-open="${f.id}">فتح</button><button class="small ghost" data-file-delete="${f.id}">حذف</button></div></div>`).join("")||"<p class='smalltext'>لا توجد ملفات مرفقة.</p>"}</div></div>
+ <div><h3 style="font-size:15px">بيانات الدراسة</h3><p class="smalltext">تاريخ بدء الدراسة: ${dateLabel(l.studiedAt)}</p><p class="smalltext">آخر مراجعة: ${dateLabel(l.lastRevision)}</p><p class="smalltext">عدد المراجعات: ${l.revisionCount||0}</p><div class="field"><label>تقييم فهمك الحالي</label><select id="manualRating"><option value="0">لم أقيّم بعد</option><option value="1">نسيت معظم الدرس</option><option value="2">تذكرت بصعوبة</option><option value="3">تذكرت بشكل معقول</option><option value="4">أتذكره بثقة</option></select></div><button id="reviewNow">تسجيل مراجعة الآن</button></div></div>
+ <hr style="border:0;border-top:1px solid var(--line);margin:18px 0">
+ ${sectionText("ملاحظاتي",l.notes)}${sectionText("القوانين والمعادلات",l.equations)}${sectionText("الأسئلة المهمة",l.questions)}${sectionText("التدريبات",l.practice)}
+ <div class="smalltext">سجل المراجعات: ${(l.history||[]).length?l.history.slice().reverse().map(h=>`${dateLabel(h.date)} — ${["","نسيت معظم الدرس","تذكرت بصعوبة","تذكرت بشكل معقول","أتذكره بثقة"][h.rating]}`).join(" · "):"لا توجد مراجعات مسجلة بعد."}</div>`);
+ $("#closeModal").onclick=closeModal;$("#editThis").onclick=()=>openLessonForm(id);
+ $("#reviewNow").onclick=()=>{let rating=Number($("#manualRating").value);if(!rating){toast("اختار تقييمك الأول");return}recordReview(l,rating);closeModal();render()};
+ $("#fileInput").onchange=async e=>{for(let f of e.target.files){let fileId=makeId();try{await fileDBPut(fileId,f);l.files.push({id:fileId,name:f.name,type:f.type,size:f.size});}catch(err){toast("تعذر حفظ الملف: "+f.name)}}save();openLesson(id);toast("تم حفظ المرفقات في هذا المتصفح")};
+ document.querySelectorAll("[data-file-delete]").forEach(b=>b.onclick=async()=>{let fid=b.dataset.fileDelete;await fileDBDelete(fid);l.files=l.files.filter(f=>f.id!==fid);save();openLesson(id)});
+ document.querySelectorAll("[data-file-open]").forEach(b=>b.onclick=async()=>{try{let blob=await fileDBGet(b.dataset.fileOpen);if(!blob){toast("الملف غير موجود في تخزين المتصفح");return}let url=URL.createObjectURL(blob);openModal(`<div class="modal-head"><h2>معاينة الملف</h2><button class="ghost small" id="closeModal">إغلاق</button></div><iframe src="${url}" title="معاينة الملف" style="width:100%;height:75vh;border:1px solid var(--line);border-radius:10px"></iframe><div class="toolbar"><a href="${url}" download style="color:var(--primary)">تنزيل الملف</a></div>`);$("#closeModal").onclick=()=>{closeModal();URL.revokeObjectURL(url)}}catch(e){toast("تعذر فتح الملف")}});
+}
+function sectionText(title,value){return `<div style="margin:13px 0"><h3 style="font-size:14px;margin:0 0 5px">${title}</h3><div style="white-space:pre-wrap;color:var(--muted);font-size:13px">${escapeHTML(value||"لم تتم إضافة محتوى بعد.")}</div></div>`}
+function scheduleFirst(l){let n=new Date();n.setDate(n.getDate()+Number(db.settings.intervals[0]||1));l.nextRevision=iso(n)}
+function recordReview(l,rating){
+ let d=iso(today());l.history.push({date:d,rating});l.lastRevision=d;l.revisionCount=(l.revisionCount||0)+1;l.rating=rating;
+ if(rating===1){let n=new Date();n.setDate(n.getDate()+1);l.nextRevision=iso(n);l.status="revision"}
+ else if(rating===2){let n=new Date();n.setDate(n.getDate()+2);l.nextRevision=iso(n);l.status="revision"}
+ else {let idx=Math.min(l.revisionCount,db.settings.intervals.length-1);let days=Number(db.settings.intervals[idx]||30);let n=new Date();n.setDate(n.getDate()+days);l.nextRevision=iso(n);l.status=rating===4&&l.revisionCount>=5?"mastered":"studied"}
+ save();toast("تم تسجيل المراجعة وتحديد الموعد التالي");
+}
+async function notify(title,body){if(!("Notification"in window)){toast("المتصفح لا يدعم الإشعارات");return}if(Notification.permission==="granted")new Notification(title,{body});else if(Notification.permission!=="denied"){let p=await Notification.requestPermission();if(p==="granted")new Notification(title,{body});else toast("لم يتم السماح بالإشعارات")}}
+function checkDueNotice(){let due=dueLessons();if(due.length){setTimeout(()=>toast(`عندك ${due.length} مراجعة مستحقة اليوم`),700)}}
+function checkDailyReminder(){if(!db.settings.notifications||!("Notification"in window)||Notification.permission!=="granted")return;let now=new Date(),hh=String(now.getHours()).padStart(2,"0"),mm=String(now.getMinutes()).padStart(2,"0"),day=iso(now);if(hh+":"+mm===(db.settings.reminderTime||"19:00")&&localStorage.getItem("myStudyHub.lastReminder")!==day){let due=dueLessons();if(due.length){notify("موعد مراجعتك",`عندك ${due.length} درس مستحق للمراجعة في My Study Hub.`);localStorage.setItem("myStudyHub.lastReminder",day)}}}
+setInterval(checkDailyReminder,30000);
+function exportJSON(){let blob=new Blob([JSON.stringify(db,null,2)],{type:"application/json"});downloadBlob(blob,"my-study-hub-backup-"+iso(today())+".json")}
+function importJSON(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result);if(!x.subjects||!x.lessons)throw Error();if(!confirm("سيتم استبدال بيانات الموقع بالنسخة المختارة. متابعة؟"))return;db=x;save();render();toast("تم استيراد النسخة بنجاح")}catch(err){toast("ملف النسخة الاحتياطية غير صالح")}};r.readAsText(f)}
+function downloadBlob(blob,name){let a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1000)}
+function exportICS(){let items=lessons().filter(l=>l.nextRevision);let lines=["BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//My Study Hub//AR"];items.forEach(l=>{let d=l.nextRevision.replaceAll("-","");lines.push("BEGIN:VEVENT","UID:"+l.id+"@mystudyhub","DTSTAMP:"+new Date().toISOString().replace(/[-:]/g,"").replace(/\.\d{3}/,""),"DTSTART;VALUE=DATE:"+d,"SUMMARY:"+("مراجعة: "+l.title).replace(/[,;]/g,"\\$&"),"DESCRIPTION:"+("مراجعة مادة "+(db.subjects.find(s=>s.id===l.subjectId)?.name||"")).replace(/[,;]/g,"\\$&"),"END:VEVENT")});lines.push("END:VCALENDAR");downloadBlob(new Blob([lines.join("\r\n")],{type:"text/calendar"}),"study-revisions.ics")}
+function fileDB(){return new Promise((res,rej)=>{let q=indexedDB.open("MyStudyHubFiles",1);q.onupgradeneeded=()=>q.result.createObjectStore("files");q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error)})}
+async function fileDBPut(k,v){let d=await fileDB();return new Promise((res,rej)=>{let t=d.transaction("files","readwrite");t.objectStore("files").put(v,k);t.oncomplete=res;t.onerror=()=>rej(t.error)})}
+async function fileDBDelete(k){let d=await fileDB();return new Promise((res,rej)=>{let t=d.transaction("files","readwrite");t.objectStore("files").delete(k);t.oncomplete=res;t.onerror=()=>rej(t.error)})}
+async function fileDBGet(k){let d=await fileDB();return new Promise((res,rej)=>{let t=d.transaction("files","readonly");let q=t.objectStore("files").get(k);q.onsuccess=()=>res(q.result);q.onerror=()=>rej(q.error)})}
+init();
+</script>
+</body>
+</html>
